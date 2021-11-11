@@ -35,7 +35,7 @@ function Main() {
         <div className="bottomWord">장르를 골라 인생영화를 찾아보세요!</div>
         <div className="recommendBarWrap">
           <div className="recommendBar"></div>
-          <button className="recommendBtn">search</button>
+          <button className="recommendBtn">SEARCH</button>
         </div>
         <div className="recommendBox"></div>
       </div>

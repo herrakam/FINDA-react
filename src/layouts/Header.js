@@ -12,7 +12,7 @@ function Header() {
         <div className="headerleft">
           <div className="logoAndName">
             <div className="logo">로고이미지</div>
-            <div className="siteName">FNIDA</div>
+            <div className="siteName">FINDA</div>
           </div>
           <div className="homeBtn">
             <Link>HOME</Link>
