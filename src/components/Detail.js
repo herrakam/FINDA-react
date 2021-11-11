@@ -1,12 +1,12 @@
 import React from "react";
 
 function Detail() {
-  //url에 전달된 정보로 검색 후 결과들 맞는 테그에 배치함, 페이지 로딩 되면 자동으로 실행
-  const getSearchedInfo = () => {};
-  //리뷰 입력 구현 함수
-  const makeReview = () => {};
-  //비슷한 영화 포스터 가져오는 함수
-  const getSimilarMoviePoster = () => {};
+  // //url에 전달된 정보로 검색 후 결과들 맞는 테그에 배치함, 페이지 로딩 되면 자동으로 실행
+  // const getSearchedInfo = () => {};
+  // //리뷰 입력 구현 함수
+  // const makeReview = () => {};
+  // //비슷한 영화 포스터 가져오는 함수
+  // const getSimilarMoviePoster = () => {};
   return (
     <>
       <div className="backgroundPoster"></div>

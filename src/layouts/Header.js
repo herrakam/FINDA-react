@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Layout() {
+function Header() {
+  // //헤더의 검색창 기능 구현에 들어가는 기능. 리펙토링으로 합칠 수 있을듯
+  // const headerSearchEngine = () => {};
+  // //엔터키 입력시 검색 실행해주는 함수. 리펙토링 필요
+  // const headerSearchKeyboard = () => {};
   return (
     <>
       <div className="header">
@@ -29,4 +33,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default Header;

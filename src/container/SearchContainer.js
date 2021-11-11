@@ -1,11 +1,15 @@
 import React from "react";
 import Search from "../components/Search";
+import Footer from "../layouts/Footer";
+import Header from "../layouts/Header";
 
 function SearchContainer() {
   return (
-    <div>
+    <>
+      <Header></Header>
       <Search></Search>
-    </div>
+      <Footer></Footer>
+    </>
   );
 }
 

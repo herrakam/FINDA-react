@@ -1,8 +1,16 @@
 import React from "react";
 import Detail from "../components/Detail";
+import Footer from "../layouts/Footer";
+import Header from "../layouts/Header";
 
 function DetailContainer() {
-  return <Detail></Detail>;
+  return (
+    <>
+      <Header></Header>
+      <Detail></Detail>
+      <Footer></Footer>
+    </>
+  );
 }
 
 export default DetailContainer;
