@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
 function Footer() {
   const Footer = styled.div`

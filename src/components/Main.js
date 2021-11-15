@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 function Main() {
   // // 검색결과창 띄운 후 안에 검색 결과 가져옴, 검색창 비워지면 검색결과창 가리는 함수 실행,searchbar onkeyup시 실행할 함수,
