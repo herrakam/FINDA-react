@@ -8,7 +8,6 @@ function DetailContainer() {
     <>
       <Header></Header>
       <Detail></Detail>
-      <Footer></Footer>
     </>
   );
 }

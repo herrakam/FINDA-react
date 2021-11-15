@@ -8,7 +8,6 @@ function SearchContainer() {
     <>
       <Header></Header>
       <Search></Search>
-      <Footer></Footer>
     </>
   );
 }

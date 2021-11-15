@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+import { MdOutlineMovieCreation, MdSearch } from "react-icons/md";
 function Header() {
   // //헤더의 검색창 기능 구현에 들어가는 기능. 리펙토링으로 합칠 수 있을듯
   // const headerSearchEngine = () => {};
@@ -31,33 +31,98 @@ function Header() {
     display: flex;
     width: 30%;
     justify-content: space-between;
+    * {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
   `;
   const LogoAndName = styled.div`
     display: flex;
     align-items: center;
+    .MdOutlineMovieCreation {
+      color: white;
+      padding: 0 0 0 10px;
+    }
   `;
+  const SiteName = styled.div`
+    line-height: 45%;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  `;
+  const SearchBox = styled.div`
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    height: 25px;
+    background-color: #fff;
+    border: 1px solid white;
+    border-radius: 30px;
+    transition: 0.4s;
+    width: 25px;
+    animation-direction: reverse;
+    margin: 0 50px 0 0;
+    :hover {
+      box-shadow: 0px 0px 0.5px 1px #51e3d4;
+      width: 180px;
+      animation-direction: reverse;
+      .SearchText {
+        width: 120px;
+        padding: 0 6px;
+      }
+    }
+    .searchBtn {
+      text-decoration: none;
+      float: right;
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #51e3d4;
+    }
+  `;
+  const SearchText = styled.input`
+    display: flex;
+    padding: 0;
+    width: 0px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    font-size: 1rem;
+    line-height: 25px;
+    transition: 0.4s;
+  `;
+
   return (
     <>
       <Header>
         <HeaderLeft>
           <LogoAndName>
-            {/* <i className="fas fa-film fa-2x"></i> */}
-            <div className="siteName">FINDA</div>
+            <MdOutlineMovieCreation className="movieIcon" size="30" />
+            <SiteName>FINDA</SiteName>
           </LogoAndName>
           <HomeBtn>
-            <Link>HOME</Link>
-            <Link>Movie</Link>
+            <Link to="/">HOME</Link>
+            <Link to="search">Movie</Link>
           </HomeBtn>
         </HeaderLeft>
-        <div className="searchBox">
-          <input
+        <SearchBox>
+          <SearchText
             type="text"
-            className="searchText"
             placeholder="Type to search"
+            className="SearchText"
           />
-          <div className="Link">클릭시 search</div>
-          <div className="div">돋보기이미지</div>
-        </div>
+          <Link to="#" className="searchBtn">
+            <MdSearch size="25"></MdSearch>
+          </Link>
+          {/* 검색어 넘겨주는 함수 넣어줘야함! */}
+        </SearchBox>
       </Header>
     </>
   );

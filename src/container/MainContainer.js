@@ -8,7 +8,6 @@ function MainContainer() {
     <>
       <Header></Header>
       <Main></Main>
-      <Footer></Footer>
     </>
   );
 }
