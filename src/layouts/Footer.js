@@ -4,7 +4,7 @@ import { BsGithub } from "react-icons/bs";
 function Footer() {
   const Footer = styled.div`
     background: #181818;
-    height: 90px;
+    height: 10vh;
     display: flex;
     justify-content: center;
     flex-direction: column;

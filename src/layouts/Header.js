@@ -16,6 +16,7 @@ function Header() {
     align-items: center;
     z-index: 10;
     transition: 0.5s;
+    height: 50px;
   `;
   const HeaderLeft = styled.div`
     font-family: "Nunito Sans", sans-serif;
@@ -56,12 +57,12 @@ function Header() {
     padding: 10px;
     top: 50%;
     left: 50%;
-    height: 25px;
+    height: 20px;
     background-color: #fff;
     border: 1px solid white;
     border-radius: 30px;
     transition: 0.4s;
-    width: 25px;
+    width: 20px;
     animation-direction: reverse;
     margin: 0 50px 0 0;
     :hover {
@@ -76,8 +77,8 @@ function Header() {
     .searchBtn {
       text-decoration: none;
       float: right;
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
       background-color: white;
       border-radius: 50%;
       display: flex;
@@ -95,7 +96,7 @@ function Header() {
     outline: none;
     float: left;
     font-size: 1rem;
-    line-height: 25px;
+    line-height: 20px;
     transition: 0.4s;
   `;
 

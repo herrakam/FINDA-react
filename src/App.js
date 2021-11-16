@@ -6,6 +6,7 @@ import DetailContainer from "./container/DetailContainer";
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import styled from "styled-components";
+import Scraping from "./components/Scraping";
 
 function App() {
   const BodyWrap = styled.div`
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" component={MainContainer} exact></Route>
         <Route path="/search" component={SearchContainer}></Route>
         <Route path="/detail" component={DetailContainer}></Route>
+        <Route path="/scraping" component={Scraping}></Route>
       </BodyWrap>
       <Footer></Footer>
     </>
