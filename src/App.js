@@ -7,11 +7,20 @@ import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
 import styled from "styled-components";
 import Scraping from "./components/Scraping";
+import axios from "axios";
+import { useEffect } from "react";
 
 function App() {
   const BodyWrap = styled.div`
     min-height: 100vh;
   `;
+  const callApi = async () => {
+    axios.get("/").then((res) => console.log("연결됬음"));
+  };
+
+  useEffect(() => {
+    callApi();
+  }, []);
   return (
     <>
       <Header></Header>
