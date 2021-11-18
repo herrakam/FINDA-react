@@ -12,7 +12,11 @@ import { useEffect } from "react";
 
 function App() {
   const BodyWrap = styled.div`
+    width: 100%;
     min-height: 100vh;
+    text-align: center;
+    margin: 0 auto;
+    background: yellow;
   `;
   const callApi = async () => {
     axios.get("/").then((res) => console.log("연결됬음"));

@@ -1,18 +1,47 @@
 import React from "react";
+import styled from "styled-components";
 
+const BackgroundPoster = styled.div`
+  width: 100%;
+  height: 300px;
+`;
+const TopWrap = styled.div`
+  padding-top: 50px;
+  position: relative;
+  top: -70px;
+  /* background: #181818; */
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 1fr 2fr;
+  width: 90%;
+  z-index: 3;
+  border-radius: 15px;
+  border: 1px solid black;
+`;
+const Poster = styled.div`
+  width: 300px;
+  height: 400px;
+  /* color: white; */
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 0 40px 10px;
+`;
+const InfoWrap = styled.div`
+  width: 100%;
+  min-width: 75%;
+  align-items: center;
+  border: 1px solid black;
+`;
 function Detail() {
-  // //url에 전달된 정보로 검색 후 결과들 맞는 테그에 배치함, 페이지 로딩 되면 자동으로 실행
-  // const getSearchedInfo = () => {};
-  // //리뷰 입력 구현 함수
-  // const makeReview = () => {};
-  // //비슷한 영화 포스터 가져오는 함수
-  // const getSimilarMoviePoster = () => {};
   return (
     <>
-      <div className="backgroundPoster"></div>
-      <div className="topWrap">
-        <div className="poster">포스터 들어갈 자리</div>
-        <div className="infoWrap">
+      <BackgroundPoster></BackgroundPoster>
+      <TopWrap>
+        <Poster>포스터 들어갈 자리</Poster>
+        <InfoWrap>
           <div className="titleWrap">
             <div className="title">타이틀</div>
             <div className="year">연도</div>
@@ -30,8 +59,8 @@ function Detail() {
             <div className="platformTab">이곳에서 찾아볼 수 있어요!</div>
             <div className="platformDetailWrap"></div>
           </div>
-        </div>
-      </div>
+        </InfoWrap>
+      </TopWrap>
       <div className="middleWrap">
         <div className="storyWrap">시놉시스</div>
         <div className="story"></div>

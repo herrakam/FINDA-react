@@ -33,7 +33,7 @@
     "eject": "react-scripts eject",
     "server": "cd server && nodemon server",
     "client": "yarn start",
-    "bothstart": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "runserver": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "eslintConfig": {
     "extends": [
