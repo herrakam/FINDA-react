@@ -14,9 +14,9 @@ function App() {
   const BodyWrap = styled.div`
     width: 100%;
     min-height: 100vh;
-    text-align: center;
-    margin: 0 auto;
-    background: yellow;
+    background: skyblue;
+    /* display: grid; */
+    justify-content: center;
   `;
   const callApi = async () => {
     axios.get("/").then((res) => console.log("연결됬음"));
