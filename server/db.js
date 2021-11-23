@@ -1,14 +1,15 @@
 const mongoose = require("mongoose");
-module.exports = () => {
-  function connnect() {
-    mongoose.connect("localhost:27017", function (err) {
-      if (err) {
-        console.log("mongodbConnectionError", err);
-      }
-      console.log("mongodb connected");
-    });
-  }
+
+mongoose.connect("mongodb://localhost:27017/DBFINDA");
+const connect1 = mongoose.createConnection("mongodb://localhost:27017/DBFINDA");
+
+const db = mongoose.connection;
+
+const open = () => {
+  console.log("connected to DB 성공");
 };
-connect();
-mongoose.connection.on("disconnected", connect);
-require("/goose.js");
+const error = () => {
+  console.log("error발생");
+};
+db.once("open", open);
+db.on("error", error);
