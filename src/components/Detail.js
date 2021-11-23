@@ -147,12 +147,12 @@ const CommentWrap = styled.div`
   padding-top: 10px;
   margin: 0 0 20px 0;
 `;
-const InputComment = styled.input`
-  width: 90%;
-  height: 50px;
-  margin: 0 10px 0 0;
-  color: white;
-`;
+// const InputComment = styled.input`
+//   width: 90%;
+//   height: 50px;
+//   margin: 0 10px 0 0;
+//   color: white;
+// `;
 const CommentPlace = styled.input`
   width: 100%;
   height: 50px;
