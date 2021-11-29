@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { MdOutlineMovieCreation, MdSearch } from "react-icons/md";
+
 const HeaderWrap = styled.div`
   background: rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -10,9 +11,13 @@ const HeaderWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  transition: 2s;
+  transition: 1s;
   height: 50px;
+  :hover {
+    background: #181818;
+  }
 `;
+
 const HeaderLeft = styled.div`
   font-family: "Nunito Sans", sans-serif;
   display: flex;
@@ -94,27 +99,29 @@ const SearchText = styled.input`
   line-height: 20px;
   transition: 0.4s;
 `;
-function Header() {
+const Header = () => {
   const [scrollY, setScrollY] = useState(0);
   const comeHeader = useRef(0);
 
   // 스크롤 내리면 숨어있던 헤더 보여주기
   const showHeader = () => {
-    setTimeout(() => {
+    let currentUrl = window.location.href;
+    const mainUrl = "http://localhost:3000/";
+    if (currentUrl === mainUrl) {
       setScrollY(window.scrollY);
-      if (window.scrollY > 100) {
-        comeHeader.current.style.display = "flex";
-      } else {
+      if (scrollY < 100) {
         comeHeader.current.style.display = "none";
+      } else {
+        comeHeader.current.style.display = "flex";
       }
-    }, 200);
+    }
   };
   useEffect(() => {
     window.addEventListener("scroll", showHeader);
     return () => {
       window.removeEventListener("scroll", showHeader);
     };
-  }, []);
+  }, [showHeader]);
 
   // //헤더의 검색창 기능 구현에 들어가는 기능. 리펙토링으로 합칠 수 있을듯
   // const headerSearchEngine = () => {};
@@ -123,7 +130,7 @@ function Header() {
 
   return (
     <>
-      <HeaderWrap ref={comeHeader} style={{ display: "none" }}>
+      <HeaderWrap ref={comeHeader}>
         <HeaderLeft>
           <LogoAndName>
             <MdOutlineMovieCreation className="movieIcon" size="30" />
@@ -148,6 +155,6 @@ function Header() {
       </HeaderWrap>
     </>
   );
-}
+};
 
 export default Header;

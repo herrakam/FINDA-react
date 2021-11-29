@@ -5,11 +5,30 @@ const connect1 = mongoose.createConnection("mongodb://localhost:27017/DBFINDA");
 
 const db = mongoose.connection;
 
-const open = () => {
+db.once("open", function () {
   console.log("connected to DB 성공");
-};
-const error = () => {
+});
+db.on("error", function () {
   console.log("error발생");
-};
-db.once("open", open);
-db.on("error", error);
+});
+
+let movieDetail = mongoose.Schema({
+  id: "string",
+  title: "string",
+  poster: "string",
+  year: "number",
+  director: "string",
+  // genre: [
+  //   {
+  //     genreText: "string",
+  //   },
+  // ],
+  // actor: "object",
+  // platformName: "object",
+  // iconUrl: "ojject",
+  // desc: "string",
+  // reviews: "object",
+});
+// let nameAndPoster = mongoose.Schema({
+
+// })

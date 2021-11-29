@@ -183,6 +183,11 @@ const ReviewBox = styled.div`
   grid-auto-columns: 1fr;
   grid-gap: 10px;
 `;
+
+//url 토대로 영화 정보 가져오기
+// const getSearchedDetail = () => {};
+//댓글 생성 함수
+// const makeReview = ()=>{}
 function Detail() {
   return (
     <DetailWrap>

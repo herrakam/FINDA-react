@@ -17,8 +17,7 @@ function Main() {
   // const hideRecommend = () => {};
   // //선택장르 정보 url로 넘겨주는 함수(통합 필요)
   // const getRecommendUrl = () => {};
-  // //일정 스크롤 위치 되면 숨겨진 헤더 보여주는 함수
-  // const showHeader = ()=> {};
+
   const TopBody = styled.div`
     width: 100%;
     height: 100vh;
