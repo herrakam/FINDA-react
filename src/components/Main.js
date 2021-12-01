@@ -1,7 +1,32 @@
 import React from "react";
 import { MdSearch } from "react-icons/md";
 import styled from "styled-components";
-
+const TopBody = styled.div`
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  background: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`;
+const MiddleBody = styled.div`
+  width: 100%;
+  height: 70vh;
+  min-height: 70vh;
+  background: blue;
+  display: flex;
+  /* align-items: center; */
+  /*line-height: 40%;*/
+  /* flex-direction: column; */
+  justify-content: space-around;
+`;
+const BottomBody = styled.div`
+  width: 100%;
+  height: 25vh;
+  background: yellow;
+`;
 function Main() {
   // // 검색결과창 띄운 후 안에 검색 결과 가져옴, 검색창 비워지면 검색결과창 가리는 함수 실행,searchbar onkeyup시 실행할 함수,
   // const searchEngine = () => {};
@@ -18,32 +43,6 @@ function Main() {
   // //선택장르 정보 url로 넘겨주는 함수(통합 필요)
   // const getRecommendUrl = () => {};
 
-  const TopBody = styled.div`
-    width: 100%;
-    height: 100vh;
-    min-height: 100vh;
-    background: none;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  `;
-  const MiddleBody = styled.div`
-    width: 100%;
-    height: 70vh;
-    min-height: 70vh;
-    background: blue;
-    display: flex;
-    /* align-items: center; */
-    /*line-height: 40%;*/
-    /* flex-direction: column; */
-    justify-content: space-around;
-  `;
-  const BottomBody = styled.div`
-    width: 100%;
-    height: 25vh;
-    background: yellow;
-  `;
   return (
     <>
       <TopBody>

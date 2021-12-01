@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const nameAndPoster = {
   page: 1,
   page_size: 24,
@@ -511,3 +513,9 @@ const platfromInfo = [
     icon_url: "\u002Ficon\u002F141253805\u002F{profile}",
   },
 ];
+
+export const getDetailData = () => {
+  return axios.get(
+    "https://apis.justwatch.com/content/titles/movie/432043/locale/ko_KR?language=ko"
+  );
+};

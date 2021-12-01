@@ -188,13 +188,14 @@ const ReviewBox = styled.div`
 // const getSearchedDetail = () => {};
 //댓글 생성 함수
 // const makeReview = ()=>{}
-function Detail() {
+function Detail({ data }) {
   return (
     <DetailWrap>
       <BackgroundPoster>배경포스터 들어갈 곳</BackgroundPoster>
       <TopWrap>
         <Poster>포스터 들어갈 자리</Poster>
         <InfoWrap>
+          {data}
           <TitleWrap>
             <Title>타이틀</Title>
             <Year>연도</Year>

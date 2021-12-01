@@ -31,7 +31,7 @@ function App() {
       <BodyWrap>
         <Route path="/" component={MainContainer} exact></Route>
         <Route path="/search" component={SearchContainer}></Route>
-        <Route path="/detail/:moviename" component={DetailContainer}></Route>
+        <Route path="/detail" component={DetailContainer}></Route>
         <Route path="/scraping" component={Scraping}></Route>
       </BodyWrap>
       <Footer></Footer>
