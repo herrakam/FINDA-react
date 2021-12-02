@@ -195,7 +195,7 @@ function Detail({ data }) {
       <TopWrap>
         <Poster>포스터 들어갈 자리</Poster>
         <InfoWrap>
-          {data}
+          {/* {data} */}
           <TitleWrap>
             <Title>타이틀</Title>
             <Year>연도</Year>

@@ -514,8 +514,8 @@ const platfromInfo = [
   },
 ];
 
-export const getDetailData = () => {
-  return axios.get(
+export const getDetailData = async () => {
+  return await axios.get(
     "https://apis.justwatch.com/content/titles/movie/432043/locale/ko_KR?language=ko"
   );
 };

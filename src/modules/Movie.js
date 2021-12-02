@@ -14,20 +14,20 @@ const GET_MOVIE_DETAIL_ERROR = "GET_MOVIE_DETAIL_ERROR";
 export const getMovieDetail = () => ({
   type: GET_MOVIE_DETAIL,
 });
+
 export const getMovieDetailSuccess = (data) => ({
   type: GET_MOVIE_DETAIL_SUCCESS,
   payload: data,
 });
+
 export const getMovieDetailError = (e) => ({
   type: GET_MOVIE_DETAIL_ERROR,
-  error: true,
   payload: e,
 });
 
 function* getMovieDetailSaga() {
   try {
     const data = yield call(getDetailData);
-    console.log(data);
     yield put(getMovieDetailSuccess(data));
   } catch (e) {
     yield put(getMovieDetailError(e));
@@ -44,7 +44,7 @@ const initialState = {
 
 export default function Movie(state = initialState, action) {
   switch (action.type) {
-    case getMovieDetail:
+    case GET_MOVIE_DETAIL:
       return {
         ...state,
         detail: {
@@ -53,7 +53,7 @@ export default function Movie(state = initialState, action) {
           error: null,
         },
       };
-    case getMovieDetailSuccess:
+    case GET_MOVIE_DETAIL_SUCCESS:
       return {
         ...state,
         detail: {
@@ -62,7 +62,7 @@ export default function Movie(state = initialState, action) {
           error: null,
         },
       };
-    case getMovieDetailError:
+    case GET_MOVIE_DETAIL_ERROR:
       return {
         ...state,
         detail: {
