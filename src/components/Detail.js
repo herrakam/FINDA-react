@@ -189,16 +189,16 @@ const ReviewBox = styled.div`
 //댓글 생성 함수
 // const makeReview = ()=>{}
 function Detail({ data }) {
+  console.log(data);
   return (
     <DetailWrap>
       <BackgroundPoster>배경포스터 들어갈 곳</BackgroundPoster>
       <TopWrap>
         <Poster>포스터 들어갈 자리</Poster>
         <InfoWrap>
-          {/* {data} */}
           <TitleWrap>
-            <Title>타이틀</Title>
-            <Year>연도</Year>
+            <Title>{data.data.title}</Title>
+            <Year>{data.data.original_release_year}</Year>
           </TitleWrap>
           <SubjectWrap>
             <SubjectTab>감독 </SubjectTab>
@@ -220,7 +220,7 @@ function Detail({ data }) {
       </TopWrap>
       <MiddleWrap>
         <StoryWrap className="TabStyle">시놉시스</StoryWrap>
-        <Story>줄거리</Story>
+        <Story>{data.data.short_description}</Story>
       </MiddleWrap>
       <SimilarWord>이 영화랑 비슷한 영화들</SimilarWord>
       <SimilarMovieWrap></SimilarMovieWrap>
