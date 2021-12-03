@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const nameAndPoster = {
+export const nameAndPoster = {
   page: 1,
   page_size: 24,
   total_pages: 83,
@@ -200,7 +200,7 @@ const nameAndPoster = {
     },
   ],
 };
-const genreInfo = [
+export const genreInfo = [
   {
     id: 1,
     short_name: "act",
@@ -335,7 +335,7 @@ const genreInfo = [
     slug: "made-in-europe",
   },
 ];
-const platfromInfo = [
+export const platfromInfo = [
   {
     id: 8,
     technical_name: "netflix",

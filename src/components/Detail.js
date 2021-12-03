@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { genreInfo } from "../api";
 
 const DetailWrap = styled.div`
   /* width: 100%; */
@@ -10,7 +11,7 @@ const DetailWrap = styled.div`
   align-items: center;
 `;
 
-const BackgroundPoster = styled.div`
+const BackgroundPoster = styled.img`
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -38,7 +39,7 @@ const TopWrap = styled.div`
     font-weight: bold;
   }
 `;
-const Poster = styled.div`
+const Poster = styled.img`
   height: 400px;
   border: 1px solid black;
   border-radius: 5px;
@@ -71,12 +72,23 @@ const Director = styled.div`
   height: 100%;
 `;
 const Genre = styled.div`
+  display: flex;
   width: 75%;
   height: 100%;
+  * {
+    margin: 0 4px 0 4px;
+  }
 `;
 const Actor = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, minmax(max-content, max-content));
+  grid-template-rows: 20px;
   width: 75%;
   height: 100%;
+  overflow-x: hidden;
+  * {
+    padding: 0 3px 0 3px;
+  }
 `;
 const SubjectWrap = styled.div`
   width: 100%;
@@ -189,12 +201,24 @@ const ReviewBox = styled.div`
 //댓글 생성 함수
 // const makeReview = ()=>{}
 function Detail({ data }) {
+  const credits = data.data.credits;
+  const director = credits.find((credit) => credit.role === "DIRECTOR").name;
+  const actorArray = credits
+    .filter((credit) => credit.role === "ACTOR")
+    .slice(0, 9);
   console.log(data);
+  const genreArray = genreInfo.filter(
+    (genre) =>
+      genre.id === data.data.genre_ids[data.data.genre_ids.indexOf(genre.id)]
+  );
+  const poster = `https://images.justwatch.com/poster/${
+    data.data.poster.split("/")[2]
+  }/s332/`;
   return (
     <DetailWrap>
-      <BackgroundPoster>배경포스터 들어갈 곳</BackgroundPoster>
+      <BackgroundPoster src={poster}></BackgroundPoster>
       <TopWrap>
-        <Poster>포스터 들어갈 자리</Poster>
+        <Poster src={poster}></Poster>
         <InfoWrap>
           <TitleWrap>
             <Title>{data.data.title}</Title>
@@ -202,15 +226,23 @@ function Detail({ data }) {
           </TitleWrap>
           <SubjectWrap>
             <SubjectTab>감독 </SubjectTab>
-            <Director>감독이름</Director>
+            <Director>{director}</Director>
           </SubjectWrap>
           <SubjectWrap>
             <SubjectTab>장르</SubjectTab>
-            <Genre>장르 종류</Genre>
+            <Genre>
+              {genreArray.map((genre) => (
+                <div>{genre.translation}</div>
+              ))}
+            </Genre>
           </SubjectWrap>
           <SubjectWrap>
             <SubjectTab>출연진</SubjectTab>
-            <Actor>출연진들</Actor>
+            <Actor>
+              {actorArray.map((actor) => (
+                <div>{actor.name}</div>
+              ))}
+            </Actor>
           </SubjectWrap>
           <PlatformInfoWrap>
             <div className="platformTab">이곳에서 찾아볼 수 있어요!</div>
